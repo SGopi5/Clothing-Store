@@ -1,0 +1,140 @@
+{% extends "app/base.html" %}
+{% load static %}
+    {% block title %}
+    Contact
+    {% endblock title %}
+
+
+    {% block content %}
+    <div class="content">
+        <div class="content-box">
+            <h2>Make your Compliant and Query hear</h2>
+            <label>We always at Your Service <span>Lvly Clothes</span></label><br>
+        </div>
+    </div>
+    
+    {% endblock content %}
+
+    {% block body %}
+    <div class="cfbody">
+        <div class="cont-form-container">
+            <form action="/contact/" method="post">
+                {% csrf_token %}
+                <h1 class="text-dark fs-2"> Contact Form</h1>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+                <label for="email" >Email</label>
+                <input type="email"  name="email" id="email" required>
+                <label for="desc">Description</label>
+                <input type="text"  name="desc" id="desc" class="desctext" required>
+                <label for="Phone">Phone</label>
+                <input type="number"  name="phone" id="phone" required>
+                <button type="submit"  >Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .cfbody {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .cont-form-container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cont-form-container label, .cont-form-container input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .cont-form-container input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        .cont-form-container button {
+            background-color: #449fee;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        h1{
+            text-align: center;
+        }
+
+        .desctext{
+            width: 100px;
+            height: 150px; 
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <div class="footer">
+        <div class="footer-box">
+            <div class="footer-i f1">
+                <h4>Contact</h4>
+
+                <label>Street</label><br>
+                <label>City</label><br>
+                <label>Pincode</label><br>
+                <label>Phone</label><br>
+                <label>Email</label><br>
+                
+            </div>
+
+            <div class="footer-i f2">
+                <h4>Visit Us</h4>
+
+                <label>Getting hear</label><br>
+                <label>Our Supporters</label><br>
+                <label>Current Season</label><br>
+                <label>Staff Directory</label><br>
+                
+            </div>
+
+            <div class="footer-i f3">
+                <h4>Recent Post</h4>
+
+                <label>Breaking Down Barries</label><br>
+                <label>A Celebration of Success</label><br>
+                <label>A world of Opportunities</label><br>
+
+                
+            </div>
+
+
+            <div class="footer-i f4">
+                <h4>Lvly Clothing</h4>
+
+                <label>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, itaque magni magnam atque rem veritatis recusandae totam minima repellat quod delectus doloremque iste placeat tempora reprehenderit quae quam dolore iusto!</label>
+
+                <input type="text" placeholder="Email Address">
+                <button><i class="fa-solid fa-share"></i></button>
+                <div class="social-media">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    {% endblock body %}

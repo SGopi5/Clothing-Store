@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=|, initial-scale=1.0">
+    <title>Lvly Clothes</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="nav-cointainer">
+            <div class="logo">
+                <a href="index.html"><img src="{% static 'img/logo.jpg' %}"></a>
+                <!-- logo tag -->
+            </div>
+
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html" class="active">Lvly</a></li>
+                    <li><a href="#" class="#category">Category</a></li>
+                    <li><a href="#" class="#products">Product</a></li>
+                    <li><a href="#" class="#news">News</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+
+    <div class="content">
+        <div class="content-box">
+            <h2>Get up to 45%<br>of new products</h2>
+            <label>The Biggest sale of the year is at <span>Lvly Clothes</span></label><br>
+            <a href="#">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+
+
+
+    <div class="category" id="category">
+        <div class="category-title">
+            <h2>Lvly Clothes Category</h2>
+        </div>
+        <div class="category-box">
+            <div class="box women-box"> 
+                <div class="box-content b2">
+                    <h3>Most Popular style</h3>
+                    <label> Women</label>
+                    <a href="#">Go Hear</a>
+                </div>
+                <img src="img/women.webp">
+            </div>
+            <div class="box men-box"> 
+                <div class="box-content">
+                    <h3>Last Year's Trendzz</h3>
+                    <label> Men</label>
+                    <a href="#">Go Hear</a>
+                </div>
+                <img src="img/men.jpeg">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="most-rated">
+        <div class="most-rated-box">
+            <div class="most-rated-title">
+                <h2>MOST RATED</h2>
+            </div>
+
+            <div class="most-rated-items">
+                <div class="most-rated-item">
+                    <div class="most-rated-image">
+                        <img src="img/pro/img-1.jpeg" >
+                    </div>
+                    <div class="most-rated-body">
+                        <h4>Women T-Shirt</h4>
+                        <div class="icons">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="price">
+                            <label class="sale">₹6000</label>
+                            <label>₹3400</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="most-rated-items">
+                    <div class="most-rated-item">
+                        <div class="most-rated-image">
+                            <img src="img/pro/img-4.png" >
+                        </div>
+                        <div class="most-rated-body">
+                            <h4>Unisex Shoe</h4>
+                            <div class="icons">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <label class="sale">₹6000</label>
+                                <label>₹3400</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="most-rated-items">
+                        <div class="most-rated-item">
+                            <div class="most-rated-image">
+                                <img src="img/pro/img-6.jpeg" >
+                            </div>
+                            <div class="most-rated-body">
+                                <h4>Men T-Shirt</h4>
+                                <div class="icons">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="price">
+                                    <label class="sale">₹6000</label>
+                                    <label>₹3400</label>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popular-products" id="products">
+        <div class="popular-products-box">
+            <div class="popular-products-title">
+                <h2>POPULAR PRODUCTS</h2>
+            </div>
+            <div class="popular-products-items">
+                <section id="portfolio" class="popular-products">
+    <div class="popular-products-box">
+      {% for message in messages %}
+  
+      <div
+        class="alert alert-{{message.tags}} alert-dismissible fade show"
+        role="alert"
+      >
+        <strong>{{message}}</strong>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %}
+  
+      {% for Product, range, nSlides in allProds %}
+  
+      <h3 class="my-3 text-center text-success bg-light">
+        {{Product.0.Product_Category}} Flashsale
+      </h3>
+  
+      <div class="container">
+        <div class="row">
+  
+          {% for i in Product %}
+          <div class="col-md-3 mt-3">
+            <img src="/media/{{i.Product_Image}}" class="card-img-top" alt="not found" height="200px" width="150px" //>
+            <div class="card-body">
+              <h5 class="card-title mt-2" id="namepr{{i.id}}">{{i.Product_Name}}</h5>
+              <p class="card-text">{{i.Product_Desc|slice:"0:53"}}...</p>
+              <h6 class="card-title mb-3">
+                Price:<span id="pricepr{{i.id}}">{{i.Product_Price}}</span>
+              </h6>
+              <span id="divpr{{i.id}}" class="divpr">
+                <button id="pr{{i.id}}" class="btn btn-danger cart btn-sm mt-0">
+                  AddToCart <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </span>
+  
+              <a href="/media/{{i.Product_Image}}">
+                <button class="btn btn-dark btn-sm cart">View</button></a
+              >
+            </div>
+          </div>
+  
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</section>
+
+                <div class="popular-products-item">
+                    <div class="popular-products-image">
+                        <img src="img/Pro/img-5.jpeg">
+                    </div>
+                    <div class="popular-products-body">
+                        <h4>Woman Dress</h4>
+                        <div class="price">
+                            <label>₹3400</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popular-products-item">
+                    <div class="popular-products-image">
+                        <img src="img/Pro/img-4.png">
+                    </div>
+                    <div class="popular-products-body">
+                        <h4>Unisex Shoe</h4>
+                        <div class="price">
+                            <label>₹3400</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popular-products-item">
+                    <div class="popular-products-image">
+                        <img src="img/Pro/img-1.jpeg">
+                    </div>
+                    <div class="popular-products-body">
+                        <h4>Woman T-Shirt</h4>
+                        <div class="price">
+                            <label>₹3400</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popular-products-item">
+                    <div class="popular-products-image">
+                        <img src="img/Pro/img-2.jpeg">
+                    </div>
+                    <div class="popular-products-body">
+                        <h4>Unisex Shoe</h4>
+                        <div class="price">
+                            <label>₹3400</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="popular-products-item">
+                    <div class="popular-products-image">
+                        <img src="img/Pro/img-6.jpeg">
+                    </div>
+                    <div class="popular-products-body">
+                        <h4>Man T-Shirt</h4>
+                        <div class="price">
+                            <label>₹3400</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popular-products-btn">
+                <button>More</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="discount-news" id="news">
+        <div class="discount-news-box">
+            <div class="discount-news-content">
+                <p>80% discount on all products for the <br> New Year</p>
+                <div class="time">
+                    <label>15 <span>:</span></label>
+                    <label>12 <span>:</span></label>
+                    <label>56 <span>:</span></label>
+                    <label>02</label>
+                </div>
+            </div>
+            <div class="discount-news-image">
+                <img src="img/disc.png">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="our-services">
+        <div class="our-services-box">
+            <div class="our-services-item">
+                <div class="our-services-icon">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="our-services-body">
+                    <h3>24/7 Customer Review</h3>
+                    <label>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</label>
+                </div>
+            </div>
+
+            <div class="our-services-item">
+                <div class="our-services-icon">
+                    <i class="fa-regular fa-credit-card"></i>
+                </div>
+                <div class="our-services-body">
+                    <h3>Secure Payment</h3>
+                    <label>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</label>
+                </div>
+            </div>
+
+            <div class="our-services-item">
+                <div class="our-services-icon">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="our-services-body">
+                    <h3>Return Gurantee</h3>
+                    <label>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="footer-box">
+            <div class="footer-i f1">
+                <h4>Contact</h4>
+
+                <label>Street</label><br>
+                <label>City</label><br>
+                <label>Pincode</label><br>
+                <label>Phone</label><br>
+                <label>Email</label><br>
+                
+            </div>
+
+            <div class="footer-i f2">
+                <h4>Visit Us</h4>
+
+                <label>Getting hear</label><br>
+                <label>Our Supporters</label><br>
+                <label>Current Season</label><br>
+                <label>Staff Directory</label><br>
+                
+            </div>
+
+            <div class="footer-i f3">
+                <h4>Recent Post</h4>
+
+                <label>Breaking Down Barries</label><br>
+                <label>A Celebration of Success</label><br>
+                <label>A world of Opportunities</label><br>
+
+                
+            </div>
+
+
+            <div class="footer-i f4">
+                <h4>Lvly Clothing</h4>
+
+                <label>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, itaque magni magnam atque rem veritatis recusandae totam minima repellat quod delectus doloremque iste placeat tempora reprehenderit quae quam dolore iusto!</label>
+
+                <input type="text" placeholder="Email Address">
+                <button><i class="fa-solid fa-share"></i></button>
+                <div class="social-media">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static '/js/script.js' %}"></script>
+</body>
+</html>
